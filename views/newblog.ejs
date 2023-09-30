@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="container">
+      <div class="newblog">
+        <p>Add new blog</p>
+        <form action="/blogs" enctype="multipart/form-data" method="POST">
+          <input type="text" name="name" class="name" placeholder="Type name" required />
+          <div class="pic">
+            <label for="image">Upload your picture</label>
+            <input
+              type="file"
+              accept="image/*"
+              title="only images are allowed"
+              class="image"
+              name="picture"
+              required
+            />
+          </div>
+          <input type="text" name="title" placeholder="Enter title of blog/article" class="title" required>
+          <textarea
+            name="about"
+            class="textarea"
+            placeholder="Write here"
+            id=""
+            cols="30"
+            rows="10"
+            required
+          ></textarea>
+
+          <button type="submit" class="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+
+  </body>
+</html>

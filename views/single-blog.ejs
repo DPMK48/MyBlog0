@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include("./partials/head.ejs") %>
+
+  <body>
+
+    <%- include("./partials/nav.ejs") %>
+
+   <div class="container">
+    <div class="content blogs">
+        <div class="left">
+            <img src="data:image/<%= blog.picture.contentType %>;base64,<%= blog.picture.data.toString('base64') %>" alt="my pic" />
+          <p class="name"><%= blog.name %></p>
+        </div>
+        <div class="right">
+          <h3><%= blog.title %></h3>
+          <p class="bio"><%= blog.about %></p>
+        </div>
+      </div>
+      <a class="delete" data-doc="<%= blog.id %>"> delete</a>
+   </div>
+
+    <%- include("./partials/footer.ejs") %>
+
+  </body>
+</html>
