@@ -31,12 +31,15 @@
   color: #333;
   background: #fff;
 }
-.light-mode button{
+.light-mode .submit{
   color: #fff;
 }
-.light-mode button:hover {
+.light-mode .submit:hover {
   color: #333;
   background: #fff;
+}
+.light-mode .wrap .login {
+  color: #fff;
 }
 .light-mode .wrap .login:hover {
   background: #fff;
@@ -69,7 +72,9 @@ body {
   background: #f6f6f6;
   color: #333;
 }
-
+button {
+  cursor: pointer;
+}
 button:hover {
   background: #333;
   color: #fff;
@@ -301,9 +306,13 @@ textarea {
   width: 15%;
   padding: 0.7rem;
   border-radius: 5px;
-  color: #fff;
+  color: #333;
   border: 1px solid #a3a3a3;
   background: transparent;
+}
+.newblog form button:hover {
+  color: #fff;
+  background: #333;
 }
 .delete {
   display: inline;
@@ -312,6 +321,7 @@ textarea {
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 .delete:hover {
   color: #ff0000;
@@ -361,7 +371,7 @@ footer {
   }
   .wrap .icon {
     right: 4rem;
-    top: 50%;
+    top: 2.35rem;
     transform: translateY(-50%);
   }
   nav a {
@@ -427,5 +437,6 @@ footer {
   }
   .newblog form button {
     width: 25%;
+    color: #333;
   }
 }

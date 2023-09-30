@@ -4,9 +4,12 @@ const open = document.querySelector(".lines");
 const close = document.querySelector(".cancel");
 const trash = document.querySelector(".delete");
 const modeIcon = document.querySelector(".icon");
+const nav = document.querySelector('nav')
+console.log(modeIcon)
 
 menu.addEventListener("click", () => {
-  list.classList.toggle("display");
+  list.classList.toggle("display")
+
 });
 
 let lightMode = localStorage.getItem("lightMode");
