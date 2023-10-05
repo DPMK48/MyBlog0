@@ -4,12 +4,13 @@ const open = document.querySelector(".lines");
 const close = document.querySelector(".cancel");
 const trash = document.querySelector(".delete");
 const modeIcon = document.querySelector(".icon");
-const nav = document.querySelector('nav')
-console.log(modeIcon)
+const nav = document.querySelector("nav");
+const displayHiddenText = document.querySelector(".blogs");
+const hideParagraph = document.querySelectorAll(".bio");
+const lineClamp = document.querySelector(".line-clamp");
 
 menu.addEventListener("click", () => {
-  list.classList.toggle("display")
-
+  list.classList.toggle("display");
 });
 
 let lightMode = localStorage.getItem("lightMode");
@@ -47,6 +48,35 @@ modeIcon.addEventListener("click", () => {
   }
 });
 
+const width = window.innerWidth;
+console.log(width);
+function checkWidth() {
+  if (width <= 700) {
+    hideParagraph.forEach((item) => {
+      const regEx = /\/blogs\/[a-z0-9]{3,}/;
+
+      if (!regEx.test(window.location.pathname)) {
+        item.classList.add("line-clamp");
+      }
+    });
+  }
+}
+checkWidth();
+console.log(window.location.pathname);
+
+function removeWidth() {
+  if (width <= 700) {
+    hideParagraph.forEach((item) => {
+      if (window.location.pathname.split("/blogs/:id")) {
+        item.classList.remove("line-clamp");
+      }
+    });
+  }
+}
+displayHiddenText.addEventListener("click", () => {
+  removeWidth();
+});
+
 if (trash) {
   trash.addEventListener("click", (e) => {
     console.log(trash);
@@ -72,11 +102,11 @@ function nameNav() {
       window.location.pathname.split("/")[1].toUpperCase() ===
       item.textContent.toUpperCase()
     ) {
-      item.style.color = "red";
+      item.style.color = "blue";
     }
     if (window.location.pathname.split("/")[1].toUpperCase() === "BLOGS") {
       if (item.textContent === "Home") {
-        item.style.color = "red";
+        item.style.color = "blue";
       }
     }
   });
